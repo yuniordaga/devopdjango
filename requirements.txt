@@ -7,4 +7,4 @@ django-widget-tweaks==1.4.8
 psycopg2==2.8.6
 pytz==2019.3
 whitenoise==5.2.0
-
+Pillow
