@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     #Apps
     'core',
+    'core.homepage',
 ]
 
 MIDDLEWARE = [
