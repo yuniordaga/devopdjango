@@ -1,11 +1,14 @@
 {% extends 'home.html' %}
 {% block body %}
-    <body class="hold-transition layout-top-nav">
+    <body class="hold-transition sidebar-mini layout-fixed">
     <div class ="wrapper"> 
-    {%include 'header.html'%}
+    <!-- Header -->
+    {%include 'vtc/header.html'%}
+    <!-- Sidebar -->
+    {% include 'vtc/sidebar.html' %}
     <div class="content-wrapper">
         <div class="content-header">
-            <div clas="container">
+            <div clas="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0 text-dark">Bienvenido<small> example 3.0</small></h1>
@@ -27,9 +30,10 @@
                         </div>
                         </div>
                         </div>
-
+                        <!-- Footer -->
                         {%include 'footer.html'%}
     </div>
+    <!-- Block javascript -->
     {% block javascript %}
     
     {% endblock  %}
