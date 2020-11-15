@@ -91,7 +91,7 @@ DATABASES = {
         'DATABASE_PORT':'9692',
     }
 }
-
+'''
 DATABASES = {
     "default": {
         "ENGINE" : "django.db.backends.sqlite3",
@@ -106,7 +106,7 @@ DATABASES={
         default=config('DATABASE_URL')
         )
 }
-
+'''
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -147,7 +147,6 @@ USE_TZ = True
 #PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
-
 STATIC_URL = '/static/'
 
 django_heroku.settings(locals())
@@ -157,7 +156,7 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,"static")
 ]
 STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
-'''
 
+'''
 
 
