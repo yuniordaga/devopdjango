@@ -1,6 +1,7 @@
 from django.urls import path
 from core.views.category.views import *
-
+from django.conf import settings 
+from django.conf.urls.static import static
 
 app_name='erp'
 
@@ -10,4 +11,4 @@ urlpatterns = [
   path('category/edit/<int:pk>/',CategoryUpdateView.as_view(),name='category_update'),
   path('category/delete/<int:pk>/',CategoryDeleteView.as_view(),name='category_delete'),
 
-]
+]+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
