@@ -18,10 +18,14 @@ from django.urls import path,include
 from django.conf import settings 
 from django.conf.urls.static import static
 from homepage.views import IndexView
+from login.views import LoginFormView
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('core/',include('core.urls')),
     path('',IndexView.as_view()),
+    path('login/',LoginFormView.as_view()),
 ]+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     #Apps
     'core',
     'homepage',
+    'login',
 ]
 
 MIDDLEWARE = [
@@ -162,6 +163,6 @@ STATICFILES_DIRS=[
 ]
 STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
+LOGIN_REDIRECT_URL = '/erp/category/list/'
 
 

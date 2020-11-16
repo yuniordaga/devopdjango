@@ -1,5 +1,5 @@
 from django.http.response import JsonResponse
-from  django.views.generic import ListView ,CreateView , UpdateView ,DeleteView
+from  django.views.generic import ListView ,CreateView , UpdateView ,DeleteView , FormView
 from core.models import Category ,Product
 from django.shortcuts import render ,redirect
 from django.utils.decorators import method_decorator
@@ -113,7 +113,29 @@ class CategoryDeleteView(DeleteView):
         context['list_url']=reverse_lazy('erp:category_list')
         return context
     
-    
+
+class CategoryFormView(FormView):
+    form_class = CategoryForm
+    template_name = 'category/create.html'
+    success_url = reverse_lazy('erp:category_list')
+
+    def form_valid(self, form):
+        print(form.is_valid())
+        print(form)
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print(form.is_valid())
+        print(form.errors)
+        return super().form_invalid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Form | Categoria'
+        context['entity'] = 'Categorias'
+        context['list_url'] = reverse_lazy('erp:category_list')
+        context['action'] = 'add'
+        return context    
     
     
     
